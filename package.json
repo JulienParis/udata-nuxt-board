@@ -12,9 +12,11 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
+    "@julpy/swag-wrap": "0.0.1-beta.10",
     "@nuxtjs/axios": "^5.11.0",
     "bootstrap": "^4.5.0",
     "bootstrap-vue": "^2.15.0",
+    "dotenv": "^8.2.0",
     "nuxt": "^2.13.0"
   },
   "devDependencies": {
@@ -25,6 +27,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "standard": "^14.3.4"
   }
 }

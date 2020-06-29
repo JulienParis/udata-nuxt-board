@@ -1,3 +1,21 @@
+const dotenv = require('dotenv')
+dotenv.config()
+
+
+console.log(
+  '>>> nuxt.config.js (start) / process.env.SWAGGERURL : ',
+  process.env.SWAGGERURL
+)
+
+// - - - - - - - - - - - - - - - - - - - - - - - -
+// CONFIG APP OBJECT
+const configApp = {
+  SWAGGER_JSON_URL: process.env.SWAGGER_JSON_URL,
+  API_PROTOCOL: process.env.API_PROTOCOL,
+  API_DOMAIN: process.env.API_DOMAIN,
+  API_VERSION: process.env.API_VERSION,
+}
+
 export default {
   /*
    ** Nuxt rendering mode
@@ -26,6 +44,24 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
+
+  /* custom env variables for nuxt
+    ** cf : https://github.com/nuxt/nuxt.js/issues/1789
+    */
+  env: {
+    LOG: Boolean(configApp.LOG_MODE),
+    CONFIG_APP: configApp
+  },
+
+  /*
+   ** Routes and middlewares to load before loading routes
+   */
+  // router: {
+  //   middleware: [
+  //     // 'setApi'
+  //   ]
+  // },
+
   /*
    ** Global CSS
    */
@@ -34,7 +70,9 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: [
+    { src: '~/plugins/swag-wrap', mode: 'client' },
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -45,7 +83,7 @@ export default {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
   ],
   /*
    ** Nuxt.js modules

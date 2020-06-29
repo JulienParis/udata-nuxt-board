@@ -1,20 +1,30 @@
 <template>
   <div class="container">
+
     <div>
       <!-- <Logo /> -->
       <h1 class="title">
-        udata-nuxt-board / homepage
+        datasets
       </h1>
       <div class="links">
         <nuxt-link
-          to="/datasets"
+          to="/"
           class="button--green"
         >
-          datasets
+          homepage
         </nuxt-link>
       </div>
-
+    
     </div>
+
+    <div class="">
+      <code>
+        <pre>
+          {{ datasets }}
+        </pre>
+      </code>
+    </div>
+
   </div>
 </template>
 
@@ -22,18 +32,22 @@
 import { mapState, mapGetters, mapActions } from "vuex"
 
 export default {
-  name: "Homepage",
+  name: "Datasets",
   data() {
     return {
       swagger: undefined,
       datasets: undefined
     }
   },
-  computed: {
-    ...mapState({
-      log: (state) => state.log
+  created() {
+    let API = this.$API
+    console.log("--- index > created > API :", API)
+
+    let API_getDatasets = API && API.getDatasets().then(res => {
+      console.log("--- index > created > API_getDatasets > res:", res)
+      this.datasets = res
     })
-  }
+  },
 }
 </script>
 

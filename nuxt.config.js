@@ -49,7 +49,7 @@ export default {
     ** cf : https://github.com/nuxt/nuxt.js/issues/1789
     */
   env: {
-    LOG: Boolean(configApp.LOG_MODE),
+    LOG_MODE: Boolean(configApp.LOG_MODE),
     CONFIG_APP: configApp
   },
 

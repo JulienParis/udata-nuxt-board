@@ -2,7 +2,9 @@
   <div class="container">
 
     <div>
+
       <!-- <Logo /> -->
+
       <h1 class="title">
         datasets
       </h1>
@@ -14,16 +16,18 @@
           homepage
         </nuxt-link>
       </div>
-    
-    </div>
 
-    <div class="">
-      <code>
-        <pre>
-          {{ datasets }}
-        </pre>
-      </code>
-    </div>
+      <br>
+      
+      <div class="">
+        <code>
+          <pre>
+            {{ datasets }}
+          </pre>
+        </code>
+
+        </div>
+      </div>
 
   </div>
 </template>

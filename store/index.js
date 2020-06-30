@@ -1,5 +1,5 @@
 export const state = () => ({
-  log: process.env.LOG,
+  log: process.env.LOG_MODE,
   configApp: process.env.CONFIG_APP,
   mapAPI: undefined,
   swaggerObject: undefined,

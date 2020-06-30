@@ -25,8 +25,6 @@ export default {
   name: "Homepage",
   data() {
     return {
-      swagger: undefined,
-      datasets: undefined
     }
   },
   computed: {
